@@ -5,7 +5,7 @@ from utils.telegram_helper import send_telegram_message
 
 
 @receiver(post_save, sender=Borrowing)
-def notify_borrowing_creation(sender, instance, created, **kwargs) -> None:
+def send_notification(sender, instance, created, **kwargs) -> None:
     """Sends a notification in Telegram when a new Borrowing is created."""
     if created:
         message = (
